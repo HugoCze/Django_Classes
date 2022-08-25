@@ -28,12 +28,5 @@ def sign_up(request):
 
     if form.is_valid():
         form.save()
-        # if form.is_valid():
-        #     # Do SOMETHING CODE
-        #     print('VALIDATION SUCCESS!')
-        #     print('NAME: ' + form.cleaned_data['name'])
-        #     print('EMAIL: ' + form.cleaned_data['email'])
-        #     print('TEXT: ' + form.cleaned_data['text'])
-
 
     return render(request, 'first_app/login_page.html', {'form':form})
