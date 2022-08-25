@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Users records</title>
+        <link rel="stylesheet" href= "{% static "css/mystyle.css" %}"/>
+    </head>
+    <body>
+        <h1>The List of users below:</h1>
+        <h2>Here are all the users with their names, lastnames and emails!</h2>
+        <div class='djangtwo'>
+            {% if users %}
+                <table>
+                    <thead>
+                        <th>FirstName</th>
+                        <th>LastName</th>
+                        <th>Email</th>
+                    </thead>
+                       {% for u in users %}
+                            <tr>
+                                <td>{{ u.FirstName }}</td>
+                                <td>{{ u.LastName }}</td>
+                                <td>{{ u.Email }}</td>
+                            </tr>
+                            {% endfor %}
+                </table>
+                {% else %}
+                <p>NO ACCESS RECORDS FOUND!</p>
+                {% endif %}
+        </div>
+    </body>
+</html>
